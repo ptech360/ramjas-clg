@@ -1,0 +1,132 @@
+<div class="container-fluid">
+  <h1 style="    font-family: 'Museo-500', serif;">Time-Table</h1>
+  <table class="table table-bordered time-table-hover">
+    <caption>      
+      <select class="pull-right" [(ngModel)]="currentMonth">
+        <option value="0">Januray</option>
+        <option value="1">February</option>
+        <option value="2">March</option>
+        <option value="3">April</option>
+        <option value="4">May</option>
+        <option value="5">June</option>
+        <option value="6">July</option>
+        <option value="7">August</option>
+        <option value="8">September</option>
+        <option value="9">October</option>
+        <option value="10">November</option>
+        <option value="11">December</option>
+      </select>
+      <select class="pull-right" [(ngModel)]="currentWeek">
+        <option value="0">1st week</option>
+        <option value="1">2nd week</option>
+        <option value="2">3rd week</option>
+        <option value="3">4th week</option>
+        <option value="4">5th week</option>
+      </select>
+    </caption>
+    <thead>
+      <tr>
+        <th></th>
+        <th *ngFor="let time of timeSlots;let t=index;">
+          <span class="time-slot">{{time.time}}</span>
+          <span class="period">{{time.period}}</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let slot of slots;let i = index;">
+        <td class="day" ><span>{{days[i]}}</span></td>
+        <ng-container *ngFor="let st of slot;let j=index;">
+        <td class="slot"  *ngIf="st.course">
+          <p *ngIf="st.course"><label>Caurse :</label>{{st.course}}</p>
+          <p *ngIf="st.speciality"><label>Speciality :</label>{{st.speciality}}</p>
+          <p *ngIf="st.paper"><label>Paper :</label>{{st.paper}}</p>
+          <p *ngIf="st.standard"><label>Standard :</label>{{st.standard}}</p>
+          <p *ngIf="st.room"><label>Room :</label>{{st.room}}</p>
+          <div class="dropdown slot-option">
+            <div class="menu" >
+              
+            </div>
+            <span class="glyphicon glyphicon-option-vertical dropdown-toggle" data-toggle="dropdown" ></span>
+            <ul class="dropdown-menu">
+              <li><a [routerLink]="['/faculty/attendance']" >Attendance</a></li>
+              <li><a data-toggle="modal" data-target="#myModal" (click)="editTimeTable(i,j,st)">Edit</a></li>
+              <li><a [routerLink]="['/faculty/assignment']">Assignments</a></li>
+            </ul>
+          </div>
+        </td>
+        <td *ngIf="!st.course" style="text-align:center;vertical-align:middle;" data-toggle="modal" data-target="#myModal" (click)="editTimeTable(i,j,null)">Empty</td>
+        </ng-container>
+        <!-- <ng-container *ngIf="!slot.length">
+          <td *ngFor="let time of timeSlots;let t=index;" style="text-align:center;vertical-align:middle;" data-toggle="modal" data-target="#myModal" (click)="editTimeTable(i,t,null)">Empty</td>
+        </ng-container> -->
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <form class="form-horizontal" [formGroup]="timeTableForm" (submit)="assignSlot()">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">
+          <!-- {{timeTableForm.value['slot'].course}} {{timeTableForm.value['slot'].speciality}}  -->
+          Time-Slot({{timeTableForm.value['time'].time}} {{timeTableForm.value['time'].period}})
+        </h4>
+      </div>
+      <div class="modal-body" formGroupName="slot">
+        <div class="form-group">
+          <label class="control-label col-sm-3" style="text-align:left">Course : </label>
+          <div class="col-sm-9">
+            <select class="form-control" formControlName="course">
+                <option *ngFor="let course of courses;let p = index;">{{course}}</option>
+              </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-3" style="text-align:left">Speciality : </label>
+          <div class="col-sm-9">
+            <select class="form-control" formControlName="speciality">
+                <option *ngFor="let speciality of specialities;let p = index;">{{speciality}}</option>
+              </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-3" style="text-align:left">Standard : </label>
+          <div class="col-sm-9">
+            <select class="form-control" formControlName="standard">
+                <option *ngFor="let standard of standards;let p = index;">{{standard}}</option>
+              </select>
+          </div>
+        </div>
+            
+        <div class="form-group">
+          <label class="control-label col-sm-3" style="text-align:left">Paper : </label>
+          <div class="col-sm-9">
+            <select class="form-control" formControlName="paper">
+              <option *ngFor="let paper of papers;let p = index;">{{paper}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-3" style="text-align:left">Room : </label>
+          <div class="col-sm-9">
+            <select class="form-control" formControlName="room">
+              <option *ngFor="let room of rooms;let p = index;">{{room}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-success" [disabled]="timeTableForm.controls['slot'].invalid">Submit</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="container">
+  <h3 style="font-family: 'Museo-500', serif;">Assessments</h3>
+  <table class="table table-bordered table-hover">
+    <colgroup>
+      <col width="98%">
+      <col width="2%">
+    </colgroup>
+    <thead style="background: #626E7E;color: #d1d5db;">
+      <tr>
+        <th>Student Name
+          <span class="search">
+            <input type="text" name="search" (keyup)="search($event)"  placeholder="Search..">
+          </span>
+        </th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students;let s = index;">
+        <td>{{student.name}}</td>
+        <td>
+          <button type="button" class="btn btn-link pull-right">fill-marks</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

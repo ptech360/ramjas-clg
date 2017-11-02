@@ -1,0 +1,40 @@
+<div class="container">
+  <h1 style="    font-family: 'Museo-500', serif;">Attendance
+  <h4 class="pull-right" style="color:red;" *ngIf="!isSubmited">Not Submited</h4>
+  <h4 class="pull-right" style="color:green;" *ngIf="isSubmited">Submited</h4>
+  </h1>
+  <table class="table table-bordered table-hover">
+    <colgroup>
+      <col width="98%">
+      <col width="2%">
+    </colgroup>
+    <thead style="background: #626E7E;color: #d1d5db;">
+      <tr>
+        <th>Student Name
+          <span class="search">
+            <input type="text" name="search" (keyup)="search($event)"  placeholder="Search..">
+          </span>          
+          {{students.length-absentStudent.length}}/{{students.length}}
+        </th>
+        <th><button class="btn btn-danger" *ngIf="isSubmited" (click)="editAttendance()">Edit</button></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students;let s = index;">
+        <td>{{student.name}}</td>
+        <td class="text-center">
+          <label class="present">
+          <input type="checkbox" [disabled]="isSubmited" [(ngModel)]="student.present" (change)="countPresent(student)">
+          <span class="is-present"></span>
+        </label>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td></td>
+        <td><button class="btn btn-success" (click)="submitAttendance()" [disabled]="isSubmited">submit</button></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

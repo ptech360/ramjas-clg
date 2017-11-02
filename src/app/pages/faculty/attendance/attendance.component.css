@@ -1,0 +1,49 @@
+.present input {display:none;}
+
+.is-present{
+  padding: 1px 5px 1px 5px;
+  border: 1px solid;
+  border-radius: 3px;
+  cursor: pointer;
+  background: red;
+  color: white;
+}
+
+.is-present:before {
+  content: "A";  
+}
+
+.present input:checked + .is-present:before{
+  content: "P";
+}
+
+.present input:checked + .is-present{
+  background: #4af64a;
+  
+}
+
+.present input:disabled + .is-present{
+  cursor:not-allowed;
+}
+
+/*search*/
+.search input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+  color: black;
+  /* background-image: url('searchicon.png'); */
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 2px;
+  margin-left: 5px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.search input[type=text]:focus {
+  width: 80%;
+}

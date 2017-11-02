@@ -1,0 +1,21 @@
+/*search*/
+.search input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+  color: black;
+  /* background-image: url('searchicon.png'); */
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 2px;
+  margin-left: 5px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.search input[type=text]:focus {
+  width: 80%;
+}

@@ -1,0 +1,20 @@
+<header id="header">
+	<div class="mCenter">
+    <a href="index.php" class="rLogo"><img src="assets/logo.png"><img style="margin-left:20px; border-left:1px #ccc solid; padding-left:20px;" src="assets/animate100.gif"></a>
+    <div class="pull-right" style="color:white;">
+      <h4>Mr. Debraj Mookerjee</h4>
+      <span>Department of English</span>
+      <span></span>
+    </div>
+  </div>  
+</header>
+<nav class="container navbar navbar-inverse" style="margin-top:85px;min-height: 54px;">
+  <ul class="nav navbar-nav">
+    <li routerLinkActive="active"><a [routerLink]="['./home']">Home</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['./dashboard']">Dashboard</a></li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>

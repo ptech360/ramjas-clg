@@ -1,0 +1,9 @@
+<div class="container">
+  <h3 style="font-family: 'Museo-500', serif;">Assignments</h3>
+  <ul class="nav nav-tabs">
+    <li routerLinkActive="active"><a  [routerLink]="['./current-assignment']">Cuurent Assinments</a></li>
+    <li routerLinkActive="active"><a  [routerLink]="['./due-assignment']">Old Assinments</a></li>
+    <li class="pull-right" routerLinkActive="active"><a [routerLink]="['./new-assignment']">New</a></li>
+  </ul>
+  <router-outlet></router-outlet>
+</div>

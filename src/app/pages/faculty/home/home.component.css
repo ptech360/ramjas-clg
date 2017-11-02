@@ -1,0 +1,160 @@
+table {
+  font-family: sans-serif;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: separate;
+  table-layout: fixed;
+  margin-bottom: 50px;
+}
+
+table thead tr th {
+  background: #626E7E;
+  color: #d1d5db;
+  padding: 0.5em;
+  overflow: hidden;
+}
+
+table thead tr th:first-child {
+  border-radius: 3px 0 0 0;
+}
+
+table thead tr th:last-child {
+  border-radius: 0 3px  0 0;
+}
+table thead tr th .time-slot {
+  display: block;
+  font-size: 1.2em;
+  border-radius: 25%;
+  width: 60px;
+  height: 30px;
+  margin: 0 auto 5px;
+  /* padding: 5px; */
+  line-height: 1.8;
+}
+table thead tr th .time-slot.active {
+  background: #d1d5db;
+  color: #626E7E;
+}
+
+th {
+  text-align: center;
+}
+
+.time-table-hover>tbody>tr>td:hover {
+  background-color: #f5f5f5;
+}
+
+table thead tr th i {
+  vertical-align: middle;
+  font-size: 2em;
+}
+table tbody tr {
+  background: #d1d5db;
+}
+table tbody tr:nth-child(odd) {
+  background: #c8cdd4;
+}
+table tbody tr:nth-child(n+0) td {
+  border-bottom: 1px solid #626E7E;
+}
+table tbody tr td {
+  /* text-align: left;
+  vertical-align: middle; */
+  border-left: 1px solid #626E7E;
+  position: relative;
+  height: 155px;
+  cursor: pointer;
+  font-size: 12px;
+  min-height: 155px;
+}
+
+table tbody tr td p{
+  margin: 0px;
+}
+
+table tbody tr td:last-child {
+  border-right: 1px solid #626E7E;
+}
+table tbody tr td.day {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 2em;
+  padding: 0;
+  color: #626E7E;
+  background: #fff;
+  border-bottom: 1px solid #626E7E;
+  border-collapse: separate;
+  min-width: 100px;
+  cursor: default;
+}
+table tbody tr td.day span {
+  display: block;
+}
+@media (max-width: 60em) {
+  table tbody tr td.day span {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+  }
+}
+@media (max-width: 27em) {
+  table thead tr th {
+    font-size: 65%;
+  }
+  table thead tr th .time-slot {
+    display: block;
+    font-size: 1.2em;
+    border-radius: 25%;
+    width: 60px;
+    height: 20px;
+    margin: 0 auto 5px;
+    padding: 5px;
+  }
+  table thead tr th .time-slot.active {
+    background: #d1d5db;
+    color: #626E7E;
+  }
+  table tbody tr td.day {
+    font-size: 1.7em;
+  }
+  table tbody tr td.day span {
+    transform: translateY(16px) rotate(270deg);
+    -webkit-transform: translateY(16px) rotate(270deg);
+    -moz-transform: translateY(16px) rotate(270deg);
+  }
+}
+
+.slot-option{
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+}
+
+.slot-option .dropdown-menu{
+  top: 16px;
+  right: 8px;
+  top:none;
+  left: unset;
+}
+
+.slot-option .menu{
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top: 40px solid #626E7E;;
+  border-left: 40px solid transparent;
+}
+.slot-option span{
+  color: #d1d5db;
+  position: absolute;
+  padding: 4px;
+  right:0;
+}
+
+.slot{
+  position: relative;
+}
+.slot:hover .slot-option{
+  display: block;
+}

@@ -1,0 +1,16 @@
+<div class="assignment">
+    <h3></h3>
+    <div class="panel panel-default" *ngFor="let assignment of assignments;let i = index;">
+      <div class="panel-heading" style="padding: 5px 12px;">
+        <label>Title :</label>{{assignment.title}}
+        <!-- <span class="pull-right"><label>Due Date: </label>{{assignment.dueDate}}</span> -->
+      </div>
+      <div class="panel-body">
+        <label>Description :</label>{{assignment.description}}
+      </div>
+      <div class="panel-footer" style="padding: 5px 12px;">
+        <label>{{assignment.subject}}</label>
+        <span class="pull-right"><label>Created At :</label>{{assignment.createdAt}}</span>
+      </div>
+    </div>
+  </div>
