@@ -10,11 +10,17 @@
 </header>
 <nav class="container navbar navbar-inverse" style="margin-top:85px;min-height: 54px;">
   <ul class="nav navbar-nav">
-    <li routerLinkActive="active"><a [routerLink]="['./home']">Home</a></li>
-    <li routerLinkActive="active"><a [routerLink]="['./dashboard']">Dashboard</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['./home']">Dashboard</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['./home']">Timetable</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['./home']">Events</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['./home']">Circular</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['./home']">Assignment</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['./home']">Assessment</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['./home']">Message</a></li>
+    <li routerLinkActive="active"><a [routerLink]="['./home']">Elective</a></li>
   </ul>
   <ul class="nav navbar-nav navbar-right">
-    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+    <li><a [routerLink]="['./profile']"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
   </ul>
 </nav>
 <router-outlet></router-outlet>

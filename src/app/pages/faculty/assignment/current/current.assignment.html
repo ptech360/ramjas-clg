@@ -2,7 +2,7 @@
   <h3></h3>
   <div class="panel-group" id="accordion">
     <div class="panel panel-default" *ngFor="let assignment of assignments;let i = index;">
-      <div class="panel-heading" style="padding: 5px 12px;" data-toggle="collapse" data-parent="#accordion" [attr.href]="'#collapse'+i">
+      <div class="panel-heading" style="padding-bottom:0px;" data-toggle="collapse" data-parent="#accordion" [attr.href]="'#collapse'+i">
         <label>Title :</label>{{assignment.title}} (<label>{{assignment.subject}}</label>)
         <span class="pull-right"><label>Due Date: </label>{{assignment.dueDate}}</span>
       </div>

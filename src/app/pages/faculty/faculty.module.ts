@@ -32,6 +32,10 @@ import { FacultyComponent } from "./faculty.component";
           {
             path:'assessment',
             loadChildren:'app/pages/faculty/assignment/assessment/assessment.module#AssessmentModule'
+          },
+          {
+            path:'profile',
+            loadChildren:'app/pages/faculty/profile/profile.module#ProfileModule'
           }
         ]
       }
