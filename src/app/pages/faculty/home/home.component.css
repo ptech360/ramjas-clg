@@ -8,8 +8,8 @@ table {
 }
 
 table thead tr th {
-  background: #626E7E;
-  color: #d1d5db;
+  background: #770021;
+  color: #ffe6ed;
   padding: 0.5em;
   overflow: hidden;
 }
@@ -33,7 +33,7 @@ table thead tr th .time-slot {
 }
 table thead tr th .time-slot.active {
   background: #d1d5db;
-  color: #626E7E;
+  color: #770021;
 }
 
 th {
@@ -49,10 +49,10 @@ table thead tr th i {
   font-size: 2em;
 }
 table tbody tr {
-  background: #d1d5db;
+  background: #ffe6ed;
 }
 table tbody tr:nth-child(odd) {
-  background: #c8cdd4;
+  background: #ffe6ed;
 }
 table tbody tr:nth-child(n+0) td {
   border-bottom: 1px solid #626E7E;
@@ -80,7 +80,7 @@ table tbody tr td.day {
   vertical-align: middle;
   font-size: 2em;
   padding: 0;
-  color: #626E7E;
+  color: #770021;
   background: #fff;
   border-bottom: 1px solid #626E7E;
   border-collapse: separate;
@@ -112,7 +112,7 @@ table tbody tr td.day span {
   }
   table thead tr th .time-slot.active {
     background: #d1d5db;
-    color: #626E7E;
+    color: #770021;
   }
   table tbody tr td.day {
     font-size: 1.7em;
@@ -142,7 +142,7 @@ table tbody tr td.day span {
   position: absolute;
   top: 0;
   right: 0;
-  border-top: 40px solid #626E7E;;
+  border-top: 40px solid #770021;
   border-left: 40px solid transparent;
 }
 .slot-option span{
